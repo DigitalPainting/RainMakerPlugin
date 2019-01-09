@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389dfe1f55844e042b992f2e9029026d, type: 3}
+  m_Name: RainMakerWeatherSystem
+  m_EditorClassIdentifier: 
+  precipitationType: 0
+  precipitationIntensity: 17.342173
+  cloudType: 0
+  cloudIntensity: 0
+  UpdateInterval: 15
