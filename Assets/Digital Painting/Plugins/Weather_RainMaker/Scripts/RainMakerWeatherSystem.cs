@@ -9,16 +9,27 @@ namespace wizardscode.environment
     public class RainMakerWeatherSystem : AbstractWeatherSystem
     {
         [Header("Digital Ruby's Rain Maker")]
+        [Tooltip("The prefab to use to add Rain Maker to the scene.")]
+        public RainScript RainMakerPrefab;
         public float UpdateInterval = 2;
 
+        private GameObject rainMaker;
         private float timeToNextUpdate = 0;
-
+        
         /// <summary>
-        /// Initialize the Weahter system.
+        /// Initialize the Weather system.
         /// </summary>
         override internal void Initialize()
         {
-            // Nothing to do here
+            if (RainMakerPrefab == null)
+            {
+                Debug.LogError("To use Digital Ruby's Rainmaker Script you must provide a prefab that has the Rain Maker scripts attached. There is an example in the `prefabs` folder of this plugin.");
+                return;
+            }
+            rainMaker = Instantiate(RainMakerPrefab.gameObject);
+            rainMaker.name = "Rain Maker";
+            
+            precipitationIntensity = 0;
         }
 
         internal override void Update()
@@ -41,6 +52,7 @@ namespace wizardscode.environment
             }
             
             precipitationIntensity = Mathf.Clamp(precipitationIntensity + change, 0, 100);
+            rainMaker.GetComponent<RainScript>().RainIntensity = precipitationIntensity / 100;
         }
     }
 }

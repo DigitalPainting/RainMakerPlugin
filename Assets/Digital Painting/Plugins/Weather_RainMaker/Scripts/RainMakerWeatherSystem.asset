@@ -11,8 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389dfe1f55844e042b992f2e9029026d, type: 3}
   m_Name: RainMakerWeatherSystem
   m_EditorClassIdentifier: 
+  isAuto: 1
   precipitationType: 0
-  precipitationIntensity: 17.342173
+  precipitationIntensity: 76.83408
   cloudType: 0
   cloudIntensity: 0
+  RainMakerPrefab: {fileID: 114728673852874724, guid: 4561fa357c4f2bc41a1899a9c1e71c89,
+    type: 2}
   UpdateInterval: 15
