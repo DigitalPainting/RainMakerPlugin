@@ -37,7 +37,9 @@ sysinfo.txt
 
 # First Party Assets
 Assets/Digital Painting/*
-!Assets/Digital Painting/Plugins
+!Assets/Digital Painting/Plugins/
+Assets/Digital Painting/Plugins/*
+!Assets/Digital Painting/Plugins/Weather_RainMaker/
 
 # 3rd Party Assets
 Assets/Standard Assets.meta

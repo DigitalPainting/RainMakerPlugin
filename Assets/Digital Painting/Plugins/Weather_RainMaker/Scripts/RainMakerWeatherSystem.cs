@@ -29,7 +29,11 @@ namespace wizardscode.environment
             rainMaker = Instantiate(RainMakerPrefab.gameObject);
             rainMaker.name = "Rain Maker";
             
-            precipitationIntensity = 0;
+            CurrentProfile.precipitationIntensity = 0;
+        }
+
+        internal override void Start()
+        {
         }
 
         internal override void Update()
@@ -51,8 +55,8 @@ namespace wizardscode.environment
                 change = -Random.value * 25;
             }
             
-            precipitationIntensity = Mathf.Clamp(precipitationIntensity + change, 0, 100);
-            rainMaker.GetComponent<RainScript>().RainIntensity = precipitationIntensity / 100;
+            CurrentProfile.precipitationIntensity = Mathf.Clamp(CurrentProfile.precipitationIntensity + change, 0, 100);
+            rainMaker.GetComponent<RainScript>().RainIntensity = CurrentProfile.precipitationIntensity / 100;
         }
     }
 }
