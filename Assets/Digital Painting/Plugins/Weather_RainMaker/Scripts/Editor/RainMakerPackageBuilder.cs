@@ -4,15 +4,16 @@ using UnityEditor;
 using UnityEngine;
 
 public class RainMakerPackageBuilder : PackageBuilder {
-
-    [MenuItem("Digital Painting/Build/Build Rain Maker Package")]
+    [MenuItem("Digital Painting/Build/Build RainMaker Plugin")]
     new public static void Build()
     {
-        string pluginName = "Weather_RainMaker";
-        string rootDir = "Assets/Digital Painting/Plugins/" + pluginName;
-        string packageName = pluginName + ".unitypackage";
 
-        AssetDatabase.ExportPackage(rootDir, packageName, ExportPackageOptions.Interactive | ExportPackageOptions.Recurse);
-        Debug.Log("Exported " + packageName);
+        string rootDir = "Assets\\Digital Painting\\Plugins\\Weather_RainMaker";
+        string excludeSubDir = "";
+        string packageName = "DigitalPainting.unitypackage";
+
+        DeleteAllButPackages(rootDir, excludeSubDir);
+        BuildPackage(rootDir, packageName);
+        ReinstateFiles(rootDir, excludeSubDir);
     }
 }
