@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 public class RainMakerPackageBuilder : PackageBuilder {
@@ -8,7 +6,7 @@ public class RainMakerPackageBuilder : PackageBuilder {
     new public static void Build()
     {
         string rootDir = "Assets\\Digital Painting\\Plugins\\Weather_RainMaker";
-        string packageName = "DigitalPainting.unitypackage";
+        string packageName = "WeatherRainMaker.unitypackage";
 
         MoveExcludedFiles(rootDir);
 
